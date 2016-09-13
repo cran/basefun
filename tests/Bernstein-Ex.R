@@ -34,10 +34,14 @@ x <- -150:150/100
 X <- model.matrix(B, data = data.frame(x = x))
 plot(x, x^2, type = "l", col = "red")
 lines(x, X %*% cf)
-
-### deriv is constant outside support
-d <- model.matrix(B, data = data.frame(x = x), deriv = c(x = 1)) %*% cf
-stopifnot(length(unique(round(abs(d[abs(x) > 1])), 3)) == 1)
+###  f' is constant outside support
+Xp <- model.matrix(B, data = data.frame(x = x), deriv = c(x = 1L))
+plot(x, 2 * x, type = "l", col = "red")
+lines(x, Xp %*% cf)
+### also f' is linearily extrapolated if maxderiv > 1
+Xp <- model.matrix(B, data = data.frame(x = x), deriv = c(x = 1L), maxderiv = 2L)
+plot(x, 2 * x, type = "l", col = "red")
+lines(x, Xp %*% cf)
 
 ### Legendre to Bernstein
 ## Example from doi: 10.1016/j.amc.2007.09.050

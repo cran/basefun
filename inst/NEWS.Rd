@@ -2,11 +2,22 @@
 \name{NEWS}
 \title{NEWS file for the basefun package}
 
+\section{Changes in Version 0.0-33 (2016-09-12)}{
+  \itemize{
+    \item{Approximate Bernstein polynomial f outside its \code{support} (l, u)
+          by a linear function f(u + x) = f(u) + f'(u) * (u - x), now also
+          for \code{deriv > 0} (\code{maxderiv} argument in 
+          \code{model.matrix.Bernstein_basis}. The default (linear extrapolation
+          for \code{deriv = 0} only) did not change.}
+  }
+}
+
 \section{Changes in Version 0.0-32 (2016-05-31)}{
   \itemize{
     \item{Contraints in \code{log_basis} were potentially wrong.}
   }
 }
+
 
 \section{Changes in Version 0.0-31 (2016-04-25)}{
   \itemize{
@@ -21,4 +32,3 @@
           published on CRAN.}
   }
 }
-
