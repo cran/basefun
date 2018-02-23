@@ -26,10 +26,16 @@ predict.basis <- function(object, newdata, coef,
 nparm <- function(object)
     UseMethod("nparm")
 
-nparm.basis <- function(object)
+nparm.basis <- function(object) {
+    tmpdata <- mkgrid(as.vars(object), n = 1)
+    tmpdata <- lapply(tmpdata, function(x) x[1])
     ncol(model.matrix(object, 
-                      data = as.data.frame(as.vars(object), 
-                                           n = 10))) 
+                      data = as.data.frame(tmpdata, 
+                                           check.names = FALSE))) 
+}
+
+nparm.intercept_basis <- function(object)
+    return(1)
 
 nparm.box_bases <- function(object)
     prod(sapply(object, nparm))
