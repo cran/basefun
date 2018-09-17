@@ -22,7 +22,8 @@
 ### arXiv preprint arXiv:1404.2293
 Bernstein_basis <- function(var, order = 2, 
                             ui = c("none", "increasing", "decreasing", 
-                                   "cyclic", "zerointegral", "positive", "negative")) {
+                                   "cyclic", "zerointegral", "positive", "negative"),
+                            extrapolate = FALSE) {
 
     zeroint <- FALSE
     ui <- match.arg(ui, several.ok = TRUE)
@@ -44,7 +45,7 @@ Bernstein_basis <- function(var, order = 2,
         "decreasing" = list(ui = diff(Diagonal(order + 1), differences = 1) * -1,
                             ci = rep(0, order)),
         "increasing.positive" = {
-            tmp <- Bernstein_basis(var, order = order)
+            tmp <- Bernstein_basis(var, order = order, extrapolate = FALSE)
             tmpdf <- as.data.frame(mkgrid(var))
             B0 <- model.matrix(tmp, data = tmpdf)[1,]
             list(ui = rbind(B0, diff(Diagonal(order + 1), differences = 1)), 
@@ -53,6 +54,29 @@ Bernstein_basis <- function(var, order = 2,
         "positive" = list(ui = Diagonal(order + 1), ci = rep(0, order + 1)),
         "negative" = list(ui = -Diagonal(order + 1), ci = rep(0, order + 1)),
         "default" = stop(paste(ui, "not yet implemented")))
+
+    ### linear extrapolation, f''(support) = 0
+    if (extrapolate) {
+        s <- support(var)
+        b <- bounds(var)
+        s[[1]] <- range(s[[1]])
+        tmp <- Bernstein_basis(var, order = order, extrapolate = FALSE)
+        tmpdf <- as.data.frame(s)
+        left <- s[[1]][1] > b[[1]][1]
+        right <- s[[1]][2] < b[[1]][2]
+        if (left || right) {
+            if (left && !right) tmpdf <- tmpdf[-2,,drop = FALSE]
+            if (!left && right) tmpdf <- tmpdf[-1,,drop = FALSE]
+            dr <- 2
+            names(dr) <- names(s)
+            B0 <- model.matrix(tmp, data = tmpdf, deriv = dr)
+            ### <FIXME> we don't have infrastructure for equality
+            ### constraints, so use <= and >= 
+            ### </FIXME>
+            constr$ui <- rbind(constr$ui, B0, -B0)
+            constr$ci <- c(constr$ci, rep(0, 2 * nrow(B0)))
+        }
+    }
 
     stopifnot(inherits(var, "numeric_var"))
     varname <- variable.names(var)
@@ -125,8 +149,9 @@ model.matrix.Bernstein_basis <- function(object, data,
 
     ### extrapolate linearily for x outside s
     stopifnot(!integrate)
-    ### interpolate f^d(c + x) = f^d(c) + f^d+1(c + x) * (x - c)
+    ### interpolate f^d(s + x) = f^d(s) + f^d+1(s) * (x - s)
     ### note: the code allows for maxderiv <- deriv + d, d > 1
+    ### Maybe: constrain second deriv in s to be zero
     order <- get("order", envir = environment(object))
     data[[varname]][small] <- s[1]
     data[[varname]][large] <- s[2]
