@@ -1,7 +1,7 @@
 Package: basefun
 Title: Infrastructure for Computing with Basis Functions
-Version: 1.0-6
-Date: 2019-10-05
+Version: 1.0-7
+Date: 2020-02-13
 Authors@R: person("Torsten", "Hothorn", role = c("aut", "cre"),
                   email = "Torsten.Hothorn@R-project.org", comment = c(ORCID = "0000-0001-8301-0471"))  
 Description: Some very simple infrastructure for basis functions.
@@ -10,8 +10,8 @@ Imports: stats, polynom, Matrix, orthopolynom, methods
 URL: http://ctm.R-forge.R-project.org
 License: GPL-2
 NeedsCompilation: yes
-Packaged: 2019-10-05 14:41:54 UTC; hothorn
+Packaged: 2020-02-13 16:40:58 UTC; hothorn
 Author: Torsten Hothorn [aut, cre] (<https://orcid.org/0000-0001-8301-0471>)
 Maintainer: Torsten Hothorn <Torsten.Hothorn@R-project.org>
 Repository: CRAN
-Date/Publication: 2019-10-07 10:30:02 UTC
+Date/Publication: 2020-02-14 07:10:18 UTC
