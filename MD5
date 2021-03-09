@@ -1,11 +1,11 @@
-b45623dbe885f26ce4b097acc88ee85e *DESCRIPTION
-5ef89cd6e5075051efea03fcc107c4f9 *NAMESPACE
+9bfa4df48be5248316f3743b2d992e7e *DESCRIPTION
+d3af0aec93cc543ec698eff0e3c6453b *NAMESPACE
 64fcfbc67d1cd45a76f5c6e1fccc1b13 *R/Bernstein.R
 3126d7ad938777a2f05214a714d0e00f *R/box_bases.R
 e29be446cc3f19e171e814ac61caefbc *R/cbind_bases.R
 dfaa6e61ada2f5144c1952ffddde84a8 *R/cyclic.R
-30f02e4dc9b1807fcbab770c530efc9b *R/factor.R
-bdd054a02e3f2bf8c265fa3d2ac1d144 *R/formula.R
+6a294987bd44121ea198e1ba489f13f9 *R/factor.R
+4ad1c654fbe1c5a1e0e0661576dc7142 *R/formula.R
 e036364ca1f36a2e8523a784b6d55c6c *R/intercept.R
 725532e2af625944eb301eb3e3f73ae2 *R/kronecker.R
 2b2b18525cd1fd3d933bfb35c85d8fc2 *R/legendre.R
@@ -15,10 +15,10 @@ a4a8bafd0d19ce0071f6175da11815d5 *R/methods.R
 83a98e8fe5a1486261a3e6c3165d5c4e *R/utils.R
 1c9695dee7162d6e72883b552906e753 *cleanup
 19e26551cd6d143581d4c4eb33d7492b *inst/CITATION
-4b543de18cb048b7e0f74292b835e0cd *inst/NEWS.Rd
+22d9b8b342691037fb960a6dfdc6e6bf *inst/NEWS.Rd
 08649b5e01e05a35b2699baad644d7a6 *man/Bernstein_basis.Rd
 e302699142ee0fef7062985a604afd3d *man/Legendre_basis.Rd
-e346889cf14daf60e656a13dd60ac16a *man/as.basis.formula.Rd
+28f18cd75a419ee040d1ac6febaddc5f *man/as.basis.formula.Rd
 c736c39ccebe13232980b91e33670172 *man/b.Rd
 efe199fe5982028b2489377fe6776976 *man/basefun-package.Rd
 fd29262aeecbb02e20c43c2ee3af8dd0 *man/c.Rd
@@ -31,5 +31,5 @@ fd29262aeecbb02e20c43c2ee3af8dd0 *man/c.Rd
 75a8a91effdefbfdd30b6ddd580da652 *tests/Bernstein-Ex.R
 ca5dcd4b8b4e2489f5fab84cf88c9bdb *tests/Bernstein-Ex.Rout.save
 677a2888a82bdafebfa1e181b0be6997 *tests/bases-Ex.R
-fead45619fac4f6d180ef0b567157141 *tests/formula.R
+83fd02561ea64526cabc3985f4af6d9b *tests/formula.R
 b8914cfcc9e669648b545d914c31e1dc *tests/predict.R

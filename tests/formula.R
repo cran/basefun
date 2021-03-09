@@ -35,3 +35,18 @@ xd <- data.frame(x = x)
 b <- as.basis(~ scale(x), data = xd)
 stopifnot(all.equal(b(xd)[1:10,], b(xd[1:10,,drop = FALSE])[,]))
 
+### optionally return Matrix object
+if (require("Matrix")) {
+    d <- data.frame(x = gl(100, 100))
+    M <- model.matrix(as.basis(~ x, data = d, Matrix = TRUE), d)
+    stopifnot(inherits(M, "Matrix"))
+}
+
+### ordered factors, non-sparse
+x <- gl(5, 1, ordered = TRUE)
+(M <- model.matrix(as.basis(x), data = data.frame(x = x))) %*% 1:4
+stopifnot(inherits(M, "matrix"))
+### sparse
+x <- gl(5, 1, ordered = TRUE)
+(M <- model.matrix(as.basis(x, sparse = TRUE), data = data.frame(x = x))) %*% 1:4
+stopifnot(inherits(M, "Matrix"))
