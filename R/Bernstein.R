@@ -152,9 +152,12 @@ Bernstein_basis <- function(var, order = 2,
             ### => int a(y) theta d(y) = sum(theta)
             ### zenter by last basis function gives int bar(a(y)) theta dy = 0
             X <- X[, -ncol(X), drop = FALSE] - X[, ncol(X), drop = TRUE]
-            ### remove constrains associated with last parameter
-            constr$ui <- constr$ui[-nrow(constr$ui), -ncol(constr$ui),drop = FALSE]
-            constr$ci <- constr$ci[-length(constr$ci)]
+            ### theta_order = -sum(gamma), adjust constraints
+            if (deriv == 0L && !is.null(constr$ui)) {
+                ui <- constr$ui
+                ui <- ui[, -ncol(ui), drop = FALSE] - as(ui[, ncol(ui), drop = TRUE], "sparseVector")
+                constr$ui <- ui
+            }
         }
         attr(X, "constraint") <- constr
         attr(X, "Assign") <- matrix(varname, ncol = ncol(X))
@@ -162,7 +165,7 @@ Bernstein_basis <- function(var, order = 2,
     }
 
     attr(basis, "variables") <- var
-    attr(basis, "intercept") <- zeroint
+    attr(basis, "intercept") <- zeroint ### FIXME: Bernstein has implicit intercept unless zeroint
     attr(basis, "log_first") <- log_first
 
     class(basis) <- c("Bernstein_basis", "basis", class(basis))
