@@ -2,7 +2,19 @@
 \name{NEWS}
 \title{NEWS file for the basefun package}
 
-\section{Changes in Version 1.1-4 (2023-05-15)}{
+\section{Changes in Version 1.2-1 (2025-01-17)}{
+  \itemize{
+    \item{Allow to keep unused levels in \code{as.basis.formula}.}
+  }
+}
+
+\section{Changes in Version 1.2-0 (2024-05-21)}{
+  \itemize{
+    \item{New \code{cyclic_basis()} for modelling seasonal effects.}
+  }
+}
+
+\section{Changes in Version 1.1-4 (2023-05-16)}{
   \itemize{
     \item{\code{Bernstein_basis(..., ui = c("increasing", "zerointegral")} came with incorrect constraint matrix.}
   }
