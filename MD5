@@ -1,4 +1,4 @@
-60876567e8d874e0364c44c3216540ed *DESCRIPTION
+5722fae4a253a01feaf09dd2a92b93ff *DESCRIPTION
 4469078f43327a9db33d00a8ebc56c64 *NAMESPACE
 6a4315a67bed95b2074d0943b80b85b7 *R/Bernstein.R
 3379bd864d713b5f58d3e8da43d414ee *R/box_bases.R
@@ -16,8 +16,8 @@ d9814884c4c699f4e3159b390cf7dcbd *R/methods.R
 76161b65639451c966be75488458b3c3 *build/partial.rdb
 1c9695dee7162d6e72883b552906e753 *cleanup
 19e26551cd6d143581d4c4eb33d7492b *inst/CITATION
-357d25fb2724945fa414bc6c274459bc *inst/NEWS.Rd
-41a1417aa4f02c0ffef7cd431ad36dd3 *man/Bernstein_basis.Rd
+505935edfff79808200f9df54fbb2096 *inst/NEWS.Rd
+f0cdbf2f1aa56b71a0008a3ef360b3bf *man/Bernstein_basis.Rd
 a85cbd02873b5dab5f8e97b63271d523 *man/Legendre_basis.Rd
 0e0583f81b5661e837167ae1aa1ab515 *man/as.basis.formula.Rd
 c736c39ccebe13232980b91e33670172 *man/b.Rd
@@ -32,6 +32,6 @@ fd29262aeecbb02e20c43c2ee3af8dd0 *man/c.Rd
 aa57882a60595d6b684eede9909566b6 *src/init.c
 75a8a91effdefbfdd30b6ddd580da652 *tests/Bernstein-Ex.R
 ca5dcd4b8b4e2489f5fab84cf88c9bdb *tests/Bernstein-Ex.Rout.save
-80a9e8ab90733032082a8454e7637756 *tests/bases-Ex.R
+54e3b94d9176d483def6b39c0e3e945b *tests/bases-Ex.R
 83fd02561ea64526cabc3985f4af6d9b *tests/formula.R
 aa7e1370031295ff2986589402801017 *tests/predict.R
