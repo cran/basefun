@@ -1,6 +1,6 @@
-1bc9127e64a159c32a78c82aa1c4dfed *DESCRIPTION
+c1bed56d6d2f505d627ef6a72994ea4a *DESCRIPTION
 4469078f43327a9db33d00a8ebc56c64 *NAMESPACE
-4e8cb9af75349f8d265347c9ae1b8f8a *R/Bernstein.R
+7ba69ab910de645c497cadc57941f269 *R/Bernstein.R
 44e11b9759bdb0fe57158c5535d4a759 *R/box_bases.R
 299a786e2b71b6e9a831a8057a4506bf *R/cbind_bases.R
 a6c3e07a673c45f2eee85d239eae7693 *R/cyclic.R
@@ -13,11 +13,11 @@ e036364ca1f36a2e8523a784b6d55c6c *R/intercept.R
 d9814884c4c699f4e3159b390cf7dcbd *R/methods.R
 1b7fc43e523f28dd3741d2b4e2d710b9 *R/polynomial.R
 4bd9719fb4561bfa71afa2f9fa57a72f *R/utils.R
-b52aabe9a2757fc86742763db9dafc9b *build/partial.rdb
+1bf18d9c216b8d95033f0bd2fe2906b2 *build/partial.rdb
 1c9695dee7162d6e72883b552906e753 *cleanup
 19e26551cd6d143581d4c4eb33d7492b *inst/CITATION
-7e73ea101e7d12fc19cb2df7a3bb42aa *inst/NEWS.Rd
-f0cdbf2f1aa56b71a0008a3ef360b3bf *man/Bernstein_basis.Rd
+3ff90f11c65803c13fe4ed8b5db935e3 *inst/NEWS.Rd
+62a1e2080990567ddd2dbfb5032d831c *man/Bernstein_basis.Rd
 a85cbd02873b5dab5f8e97b63271d523 *man/Legendre_basis.Rd
 0e0583f81b5661e837167ae1aa1ab515 *man/as.basis.formula.Rd
 c736c39ccebe13232980b91e33670172 *man/b.Rd
@@ -31,7 +31,9 @@ fd29262aeecbb02e20c43c2ee3af8dd0 *man/c.Rd
 2f57e81ec1583c2c7d40c056b7101d0c *src/L2B.c
 aa57882a60595d6b684eede9909566b6 *src/init.c
 75a8a91effdefbfdd30b6ddd580da652 *tests/Bernstein-Ex.R
-ca5dcd4b8b4e2489f5fab84cf88c9bdb *tests/Bernstein-Ex.Rout.save
+21c9fc15b476cad5365e8818b2b91435 *tests/Bernstein-Ex.Rout.save
+d68484024d4fda9918a89455738a523b *tests/Rplots.pdf
 54e3b94d9176d483def6b39c0e3e945b *tests/bases-Ex.R
+bed1883a230b84ee27c3af3dba1435d3 *tests/bugfixes.R
 83fd02561ea64526cabc3985f4af6d9b *tests/formula.R
 aa7e1370031295ff2986589402801017 *tests/predict.R
